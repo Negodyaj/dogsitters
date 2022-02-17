@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DogSitters.Controllers
+namespace DogSitters.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
