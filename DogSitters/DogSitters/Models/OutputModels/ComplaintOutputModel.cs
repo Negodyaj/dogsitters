@@ -1,6 +1,7 @@
 ﻿namespace DogSitters.API.Models
 {
-    public class ReviewUpdateInputModel
+    public class ComplaintOutputModel
     {
+
     }
 }

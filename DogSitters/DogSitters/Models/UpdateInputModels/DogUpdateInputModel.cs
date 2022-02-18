@@ -2,7 +2,7 @@
 {
     public class DogUpdateInputModel
     {
-        int Age;
-        string? PhotoLink;
+        public int Age { get; set; }
+        public string Photo { get; set; }
     }
 }
