@@ -6,7 +6,6 @@
         public DateTime DateOfBirth { get; set; }
         public string FirstName { get; set; }
         public Gender Gender { get; set; }
-        public int Id { get; set; }
         public string Info { get; set; }
         public bool IsApproved { get; set; }
         public string LastName { get; set; }
