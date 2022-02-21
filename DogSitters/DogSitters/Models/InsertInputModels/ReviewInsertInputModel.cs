@@ -2,8 +2,8 @@
 {
     public class ReviewInsertInputModel
     {
+        public int Rating { get; set; }
+        public string Text { get; set; }
         public int UserId { get; set; }
-        string Text { get; set; }
-        int Rating { get; set; }
     }
 }
