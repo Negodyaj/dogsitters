@@ -1,6 +1,6 @@
 ﻿namespace DogSitters.Business.Models
 {
-    internal class ComplaintModel
+    public class ComplaintModel
     {
         public int Id { get; set; }
         public bool IsSolved { get; set; }

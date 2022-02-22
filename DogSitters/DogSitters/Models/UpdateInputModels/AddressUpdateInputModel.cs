@@ -1,8 +1,7 @@
-﻿namespace DogSitters.Business.Models
+﻿namespace DogSitters.API.Models
 {
-    public class AddressModel
+    public class AddressUpdateInputModel
     {
-        public int Id { get; set; }
         public string City { get; set; }
         public string FlatNumber { get; set; }
         public string HouseNumber { get; set; }

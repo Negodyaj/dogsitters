@@ -8,12 +8,12 @@
         public string Info { get; set; }
         public bool IsApproved { get; set; }
         public string LastName { get; set; }
-        public List<MetroStation> MetroStations { get; set; }
+        public List<int> MetroStations { get; set; }
         public string Passport { get; set; }
         public string Photo { get; set; }
         public decimal Price { get; set; }
         public decimal Rating { get; set; }
         public List<ReviewUpdateInputModel> Reviews { get; set; }
-        public List<WorkTime> WorkTime { get; set; }
+        public List<WorkTimeUpdateInputModel> WorkTime { get; set; }
     }
 }

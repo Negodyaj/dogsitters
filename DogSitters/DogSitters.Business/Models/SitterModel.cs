@@ -1,12 +1,12 @@
 ﻿namespace DogSitters.Business.Models
 {
-    internal class SitterModel
+    public class SitterModel
     {
+        public int Id { get; set; }
         public List <ComplaintModel> Complaints { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string FirstName { get; set; }
         public DataLayer.Gender Gender { get; set; }
-        public int Id { get; set; }
         public string Info { get; set; }
         public bool IsApproved { get; set; }
         public string LastName { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace DogSitters.Business.Models
 {
-    internal class ReviewModel
+    public class ReviewModel
     {
         public int Id { get; set; }
         public int Rating { get; set; }

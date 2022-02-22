@@ -1,8 +1,7 @@
 ﻿namespace DogSitters.API.Models
 {
-    public class OrderUpdateInputModel
+    public class WorkTimeUpdateInputModel
     {
-        public SitterOutputModel Sitter { get; set; }
         public DateTime TimeEnd { get; set; }
         public DateTime TimeStart { get; set; }
     }
