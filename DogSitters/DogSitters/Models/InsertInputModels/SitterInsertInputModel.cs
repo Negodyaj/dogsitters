@@ -4,7 +4,7 @@
     {
         public DateTime DateOfBirth { get; set; }
         public string FirstName { get; set; }
-        public Gender Gender { get; set; }
+        public DataLayer.Gender Gender { get; set; }
         public string Info { get; set; }
         public string LastName { get; set; }
         public List<MetroStation> MetroStations { get; set; }
