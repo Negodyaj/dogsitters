@@ -1,4 +1,4 @@
-﻿namespace DogSitters.API
+﻿namespace DogSitters.DataLayer
 {
     public enum Gender
     {
