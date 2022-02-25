@@ -2,7 +2,7 @@
 using DogSitters.API.Models;
 using AutoMapper;
 
-namespace DogSitters.API.Controllers
+namespace DogSitters.API.Controllers 
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,39 +16,63 @@ namespace DogSitters.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<OrderOutputModel> GetAllOrders()
+        public ActionResult<List<OrderOutputModel>> GetAllOrders()
         {
-            return Ok(new OrderOutputModel());
+            var storage = Business.Storage.GetInstance();
+            var orderModelList = storage.Orders;
+            var orderOutputModelList = _mapper.Map<List<OrderOutputModel>>(orderModelList);
+
+            return Ok(orderOutputModelList);
         }
 
         [HttpGet("{orderId}")]
         public ActionResult<OrderOutputModel> GetOrderById(int orderId)
         {
-            return Ok(new OrderOutputModel { Id = orderId });
+            var storage = Business.Storage.GetInstance();
+            var orderModel = storage.Orders[orderId];
+            var orderOutputModel = _mapper.Map<OrderOutputModel>(orderModel);
+
+            return Ok(orderOutputModel);
         }
 
         [HttpPost]
         public ActionResult AddOrder([FromBody] OrderInsertInputModel model)
         {
-            return Ok(model);
+            var storage = Business.Storage.GetInstance();
+            var orderModel = _mapper.Map<Business.Models.OrderModel>(model);
+            storage.Orders.Add(orderModel);
+
+            return Ok(orderModel);
         }
 
         [HttpPut("{orderId}")]
         public ActionResult UpdateOrder(int orderId, [FromBody] OrderUpdateInputModel model)
         {
-            return Ok(model);
+            var storage = Business.Storage.GetInstance();
+            var orderModel = _mapper.Map<Business.Models.OrderModel>(model);
+            storage.Orders[orderId] = orderModel;
+
+            return Ok(orderModel);
         }
 
         [HttpDelete("{orderId}")]
         public ActionResult DeleteOrder(int orderId)
         {
+            var storage = Business.Storage.GetInstance();
+            storage.Orders.RemoveAt(orderId);
+
             return NoContent();
         }
 
         [HttpPatch("{orderId}/sitter")]
-        public ActionResult UpdateSitter(int orderId, int sitterId)
+        public ActionResult UpdateSitter(int orderId, [FromBody] int sitterId)
         {
-            return Ok(this);
+            var storage = Business.Storage.GetInstance();
+            var orderModel = storage.Orders[orderId];
+            var sitterModel = storage.Sitters[sitterId];
+            orderModel.Sitter = sitterModel;
+
+            return Ok(orderModel);
         }
     }
 }
