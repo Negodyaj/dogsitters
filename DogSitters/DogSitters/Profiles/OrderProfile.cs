@@ -7,7 +7,7 @@ namespace DogSitters.API.Profiles
         public OrderProfile()
         {
             CreateMap<Business.Models.OrderModel, Models.OrderOutputModel>();
-            CreateMap<List<Business.Models.OrderModel>, List<Models.OrderOutputModel>>();
+            //CreateMap<List<Business.Models.OrderModel>, List<Models.OrderOutputModel>>();
             CreateMap<Models.OrderInsertInputModel, Business.Models.OrderModel>();
             CreateMap<Models.OrderUpdateInputModel, Business.Models.OrderModel>();
         }

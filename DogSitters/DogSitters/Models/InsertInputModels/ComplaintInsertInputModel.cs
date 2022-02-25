@@ -3,6 +3,6 @@
     public class ComplaintInsertInputModel
     {
         public string Text { get; set; }
-        public UserOutputModel User { get; set; }
+        public int UserId { get; set; }
     }
 }
