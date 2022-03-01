@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DogSitters.API.Models;
+using AutoMapper;
 
 namespace DogSitters.API.Controllers
 {
@@ -7,6 +8,13 @@ namespace DogSitters.API.Controllers
     [ApiController]
     public class SittersController : ControllerBase
     {
+        private readonly IMapper _mapper;
+
+        public SittersController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
         [HttpGet]
         public ActionResult<SitterOutputModel> GetAllSitters()
         {
